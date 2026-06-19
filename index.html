@@ -63,7 +63,7 @@
   .lead{font-size:16.5px;line-height:1.92;color:var(--ink-2);margin-bottom:1.3em;}
   .measure p{color:var(--ink-2);}
 
-  /* insight card (replaces dark panel) */
+  /* insight card */
   .insight{background:var(--accent-tint);border:1px solid #F0D9C8;border-left:4px solid var(--accent);border-radius:8px;padding:clamp(20px,3vw,30px);margin:24px 0;}
   .insight .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--accent-deep);margin-bottom:12px;display:block;}
   .insight p{font-family:var(--mincho);font-size:clamp(17px,2.1vw,21px);line-height:1.7;margin:0;color:var(--ink);font-weight:500;}
@@ -93,7 +93,7 @@
   .axislbl{font-family:var(--mono);font-size:10px;fill:var(--ink-3);}
   .gridline{stroke:var(--line);stroke-width:1;}
 
-  /* horizontal bar chart (formats) */
+  /* horizontal bar chart */
   .hbars{margin-top:6px;}
   .hbar{display:grid;grid-template-columns:118px 1fr 92px;gap:12px;align-items:center;padding:7px 0;}
   .hbar .hl{font-size:13px;font-weight:600;text-align:right;}
@@ -172,6 +172,15 @@
   .copy .ctx{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--accent-deep);margin-bottom:8px;}
   .copy .line{font-family:var(--mincho);font-size:15.5px;line-height:1.7;color:var(--ink);}
 
+  /* film script block */
+  .script{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--ink);border-radius:8px;padding:16px 20px;margin:14px 0;font-size:13.5px;line-height:1.95;color:var(--ink-2);}
+  .script .q{font-family:var(--mincho);color:var(--ink);font-size:15.5px;}
+  .script .pov{font-family:var(--mono);font-size:10px;color:var(--accent-deep);letter-spacing:.04em;margin-right:6px;}
+  .script .note{color:var(--ink-3);font-size:12.5px;}
+  .srcstrip{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0;}
+  .srctag{font-family:var(--mono);font-size:11px;background:var(--surface-2);border:1px solid var(--line);border-radius:20px;padding:5px 12px;color:var(--ink-2);}
+  .srctag b{color:var(--accent-deep);}
+
   /* recipe */
   .recipe{counter-reset:step;margin:16px 0;}
   .rstep{display:grid;grid-template-columns:30px 1fr;gap:13px;padding:12px 0;border-top:1px solid var(--line);}
@@ -202,7 +211,7 @@
   .inv .role{font-size:12.5px;color:var(--ink-2);line-height:1.6;}
   .inv .role b{color:var(--accent-deep);}
 
-  /* ===== GANTT (redesigned, clean & light) ===== */
+  /* ===== GANTT ===== */
   .gantt-scroll{overflow-x:auto;margin:18px 0 8px;border:1px solid var(--line);border-radius:12px;background:var(--surface);}
   .gantt{min-width:820px;}
   .g-head{display:grid;grid-template-columns:196px repeat(7,1fr);border-bottom:1px solid var(--line);}
@@ -219,7 +228,6 @@
   .g-track .cell{border-left:1px solid var(--line-strong);opacity:.5;height:100%;}
   .bar{height:24px;border-radius:6px;margin:0 4px;display:flex;align-items:center;padding:0 11px;color:#fff;font-size:11px;font-weight:600;white-space:nowrap;overflow:hidden;position:relative;z-index:2;box-shadow:0 1px 2px rgba(0,0,0,.08);}
   .gantt-rowwrap{position:relative;}
-  /* group accents */
   .gg-yume{background:var(--g-yume);}
   .gg-series{background:var(--g-series);}
   .gg-furu{background:var(--g-furu);}
@@ -271,14 +279,15 @@
 <header class="masthead">
   <div class="mh-top">
     <div class="mh-title">ピースワンコ <span class="o">コンテンツ戦略</span> ／ 2026 下半期</div>
-    <div class="mh-meta"><b>v2.1</b>　最終更新 2026.06.18<br>YouTube × ふるさと納税 × 夢之丞</div>
+    <div class="mh-meta"><b>v2.3</b>　最終更新 2026.06.19<br>YouTube × ふるさと納税 × 夢之丞</div>
   </div>
   <nav class="tabs" role="tablist">
     <button class="tab active" data-target="page1"><span class="n">01</span>戦略とデータ</button>
     <button class="tab" data-target="page2"><span class="n">02</span>YouTube／ショート</button>
     <button class="tab" data-target="page3"><span class="n">03</span>ふるさと納税</button>
     <button class="tab" data-target="page4"><span class="n">04</span>「その後」シリーズ</button>
-    <button class="tab" data-target="page5"><span class="n">05</span>スケジュール</button>
+    <button class="tab" data-target="page5"><span class="n">05</span>夢之丞</button>
+    <button class="tab" data-target="page6"><span class="n">06</span>スケジュール</button>
   </nav>
 </header>
 
@@ -375,7 +384,7 @@
     <section class="block">
       <p class="kicker">戦略の核</p>
       <h2 class="h">強みは、表に出していない「見えない場所」にある。</h2>
-      <p class="measure">噛む犬も、医療・老犬も、結局はシェルターの“奥”を見せているから強いんだと思います。世の中に出ているのは譲渡センターにいる卒業候補の子（＝出口）だけ。その手前には、約2,600頭が暮らすシェルター、引き出しから医療・トレーニングまでの工程、10年以上止まったままの殺処分機がある。ここは規模と透明性がないと撮れないので、他団体には真似できません。ここを正面から見せにいくのが、差別化であり、後半のふるさと納税にもそのままつながります。</p>
+      <p class="measure">噛む犬も、医療・老犬も、結局はシェルターの"奥"を見せているから強いんだと思います。世の中に出ているのは譲渡センターにいる卒業候補の子（＝出口）だけ。その手前には、約2,600頭が暮らすシェルター、引き出しから医療・トレーニングまでの工程、10年以上止まったままの殺処分機がある。ここは規模と透明性がないと撮れないので、他団体には真似できません。ここを正面から見せにいくのが、差別化であり、後半のふるさと納税にもそのままつながります。</p>
       <div class="pipe">
         <div class="pstep"><span class="dot"></span><div class="pbox"><div class="role">入口</div><div class="name">動物愛護センターの殺処分対象</div><div class="desc">譲渡が難しいとされた野犬・病犬・老犬を、毎月引き出している。</div></div></div>
         <div class="pstep eng"><span class="dot"></span><div class="engbox"><div class="role">見えないエンジン（ほぼ非公開）</div><div class="name">神石高原シェルター群（約2,600頭）</div><div class="desc">保護・健康観察・医療から、西山・スコラ犬舎での人馴れトレーニングまで。いちばん強い素材が眠っている場所。</div></div></div>
@@ -399,7 +408,7 @@
         <div class="pil"><div class="pn">PILLAR 02</div><div class="pt">お金の企画<br>（ふるさと納税）</div><div class="pr">着実に変換する</div><div class="pd">こちらから計画して、ジャブのように積み上げる。注目を寄付に変える、自分たちでコントロールできる軸。年末に効かせる。</div></div>
         <div class="pil"><div class="pn">PILLAR 03</div><div class="pt">保護犬の<br>「その後」シリーズ</div><div class="pr">継続して育てる</div><div class="pd">迎えた方との信頼を積み、保護犬を迎えるハードルを下げ、譲渡と寄付につなげる。季節・毎年で続く資産に。</div></div>
       </div>
-      <p class="measure">夢之丞で大きく跳ねさせ、お金の企画でふるさと納税に変え、その後シリーズで関係を続けていく。<strong>瞬発・変換・継続</strong>。この3つがかみ合うと、単発の感動で終わらない循環になります。それぞれの中身は、03・04のタブに。</p>
+      <p class="measure">夢之丞で大きく跳ねさせ、お金の企画でふるさと納税に変え、その後シリーズで関係を続けていく。<strong>瞬発・変換・継続</strong>。この3つがかみ合うと、単発の感動で終わらない循環になります。それぞれの中身は、03・04・05のタブに。</p>
     </section>
   </div>
 </main>
@@ -420,7 +429,7 @@
       <div class="tbl-wrap"><table>
         <thead><tr><th>企画</th><th>なぜ効くか</th><th>つながり</th></tr></thead>
         <tbody>
-          <tr><td><span class="nm">西山犬舎・噛む犬のその後</span></td><td>再生が出ている噛む犬シリーズの子たちの“今”。過去の人気回と地続きで、すでに見たい人がいる</td><td><span class="f">最強フォーマットの復活＋未公開の犬舎</span></td></tr>
+          <tr><td><span class="nm">西山犬舎・噛む犬のその後</span></td><td>再生が出ている噛む犬シリーズの子たちの"今"。過去の人気回と地続きで、すでに見たい人がいる</td><td><span class="f">最強フォーマットの復活＋未公開の犬舎</span></td></tr>
           <tr><td><span class="nm">里親のその後（卒業生を訪ねる）</span></td><td>卒業した子の今は、活動の成果そのもの。寄付の納得材料になる</td><td><span class="f">→ ふるさと納税の説得力（03）</span></td></tr>
         </tbody>
       </table></div>
@@ -436,7 +445,7 @@
         <li><strong>まず頻度を戻す</strong>：データ上、投稿が減るとアルゴリズムに拾われにくい。長尺1本から複数ショートを出して本数を確保。</li>
         <li><strong>CTAは軽め</strong>：ショートの役割は寄付ではなく、長尺へ送ること。</li>
       </ul>
-      <p class="measure">フックは必ず実在の子・施設・数字に紐づけます。「この子、もう7年ここにいる」「噛んでいた子が、今こうなってる」「この医療費、いくらだと思う？」——よくある“泣ける”の真似ではなく、ここでしか撮れないものを入口にする。</p>
+      <p class="measure">フックは必ず実在の子・施設・数字に紐づけます。「この子、もう7年ここにいる」「噛んでいた子が、今こうなってる」「この医療費、いくらだと思う？」——よくある"泣ける"の真似ではなく、ここでしか撮れないものを入口にする。</p>
     </section>
 
     <section class="block">
@@ -449,7 +458,7 @@
           <tr><td><span class="nm">里親のその後</span></td><td>10〜15分</td><td>卒業生を訪ねる。別人のように幸せそうな姿</td><td><span class="f">成果の証明</span></td></tr>
           <tr><td><span class="nm">1頭が卒業するまで</span></td><td>15〜20分</td><td>引き出し→医療→トレーニング→譲渡と、かかるお金</td><td><span class="f">ソーンで実証済み</span></td></tr>
           <tr><td><span class="nm">オレンジ犬舎の日々</span> <span class="f">※許可前提</span></td><td>8〜12分</td><td>ザッツやソーンのような終生ケアの子の日常</td><td><span class="f">維持率72%テーマ／ふるさと納税の顔</span></td></tr>
-          <tr><td><span class="nm">夢之丞</span></td><td>本編＋レガシー</td><td>出会い→訓練→出動→引退→今。素材ほぼ完備</td><td><span class="f">→ 8/10 納品（05）</span></td></tr>
+          <tr><td><span class="nm">夢之丞</span></td><td>本編＋レガシー</td><td>出会い→訓練→出動→引退→今。素材ほぼ完備</td><td><span class="f">→ 夢之丞（05）</span></td></tr>
           <tr><td><span class="nm">返礼品の裏側</span></td><td>5〜8分</td><td>神石高原の生産者を訪ねる</td><td><span class="f">ふるさと納税に直結（03）</span></td></tr>
         </tbody>
       </table></div>
@@ -538,10 +547,10 @@
           <tr><td><span class="nm">エンドカード</span></td><td>LP、または次の本編へ</td></tr>
         </tbody>
       </table></div>
-      <h3 class="sh">季節（→ 05 スケジュール）</h3>
+      <h3 class="sh">季節（→ 06 スケジュール）</h3>
       <p class="measure">夏（6〜8月）はボーナス期で小さな山。秋（9〜10月）は物語を積む。年末（11〜12月）が本番で、12/31の締切に向けて駆け込みを作り、総集編をその中心に置く。今年はポイント廃止で9月の駆け込みが起きにくいので、年末に寄せるのが正解です。</p>
       <h3 class="sh">今年ならではの一手</h3>
-      <p class="measure">「ポイントがなくなって損した気分」という空気を、「これからは純粋に応援先を選べる」と言い換える短い解説を、早めに1本。あと、返礼品の代わりにフード代になる“フードプレゼント”や、命名権のような物が届かない返礼は、今年の「意味で選ぶ」層と相性がいいので、そこを特集します。</p>
+      <p class="measure">「ポイントがなくなって損した気分」という空気を、「これからは純粋に応援先を選べる」と言い換える短い解説を、早めに1本。あと、返礼品の代わりにフード代になる"フードプレゼント"や、命名権のような物が届かない返礼は、今年の「意味で選ぶ」層と相性がいいので、そこを特集します。</p>
     </section>
 
     <section class="block">
@@ -570,7 +579,7 @@
     <section class="block">
       <p class="kicker">なぜやるのか ／ セカンダリーマーケット</p>
       <h2 class="h">迎えたあとの関係に、いちばんの価値がある。</h2>
-      <p class="measure lead">多くの団体は、譲渡（迎えてもらうこと）までを必死にやって、そこで関係がひと区切りになります。でも本当の資産は、迎えてくれた人たちとの“その後”の関係です。一度きりの新規より、続く関係のほうが価値が大きい——大西さんの言うセカンダリーマーケットは、まさにそこ。その後シリーズは、その畑を耕すコンテンツです。</p>
+      <p class="measure lead">多くの団体は、譲渡（迎えてもらうこと）までを必死にやって、そこで関係がひと区切りになります。でも本当の資産は、迎えてくれた人たちとの"その後"の関係です。一度きりの新規より、続く関係のほうが価値が大きい——大西さんの言うセカンダリーマーケットは、まさにそこ。その後シリーズは、その畑を耕すコンテンツです。</p>
       <h3 class="sh">効く理由</h3>
       <ul class="clean">
         <li><strong>迎えるハードルが下がる</strong>：元野犬や噛んでいた子が、今は家族と穏やかに暮らしている——そのリアルな姿が「うちでも大丈夫かも」という安心になる。次の里親を生む社会的証明。</li>
@@ -584,7 +593,7 @@
     <section class="block">
       <p class="kicker">マーケットの読み</p>
       <h2 class="h">これは「再生数」ではなく「信頼」で測る。</h2>
-      <p class="measure">正直に言うと、データ上「里親・卒業」テーマ単体の平均再生は10万回くらいで、噛む犬（81万回）ほどは跳ねません。だからその後シリーズをバズで測ると、見誤ります。これは<strong>再生数ではなく、譲渡の問い合わせ・寄付・里親さんとの関係の深さで測る企画</strong>です。一方で、噛む犬の“その後”として組めば、入口の強さ（再生）と継続の価値（信頼）の両方が取れる。だから——</p>
+      <p class="measure">正直に言うと、データ上「里親・卒業」テーマ単体の平均再生は10万回くらいで、噛む犬（81万回）ほどは跳ねません。だからその後シリーズをバズで測ると、見誤ります。これは<strong>再生数ではなく、譲渡の問い合わせ・寄付・里親さんとの関係の深さで測る企画</strong>です。一方で、噛む犬の"その後"として組めば、入口の強さ（再生）と継続の価値（信頼）の両方が取れる。だから——</p>
       <div class="insight">
         <span class="lbl">組み方</span>
         <p>噛む犬の<span class="o">強い入口</span>で人を集め、その子の<span class="o">「その後」</span>で信頼を積む。瞬間の再生と、続く関係を、一本の中で両立させる。</p>
@@ -622,11 +631,162 @@
   </div>
 </main>
 
-<!-- ============ PAGE 5 — スケジュール ============ -->
+<!-- ============ PAGE 5 — 夢之丞 ============ -->
 <main class="page" id="page5">
   <div class="wrap">
     <div class="pagehead">
-      <div class="ph-eyebrow">05 ／ スケジュール</div>
+      <div class="ph-eyebrow">05 ／ 下半期の柱</div>
+      <h1 class="ph-title">夢之丞レガシーと、<span class="o">ワンドリームプロジェクト</span>。</h1>
+      <p class="ph-lede">レガシーのLP刷新とコンセプトムービーに向けて、これまでの蓄積と今の方向性をここに集約します。6/19のMTGで「夢之丞ファミリー（ワンドリームプロジェクト）とは何か／ミッションは何か」を固める——その叩き台にも。</p>
+    </div>
+
+    <section class="block">
+      <p class="kicker">いま決めること</p>
+      <h2 class="h">名前と、ミッションをはっきりさせる。</h2>
+      <p class="measure lead">LPも映像も、ここが定まっていないとブレます。まず整理します。</p>
+      <h3 class="sh">名前</h3>
+      <p class="measure"><strong>「夢之丞ファミリー」がプロジェクト名</strong>。そのそばに、いつも<strong>「ワンドリームプロジェクト」</strong>を添える形。2つの名前が並ぶ分かりにくさは残るので、映像・LPでは冒頭で一度だけ「夢之丞ファミリー（＝ワンドリームプロジェクト）」と結びつけて見せ、以降は呼称を統一するのが安全です。</p>
+      <h3 class="sh">ミッション（案③でいく）</h3>
+      <div class="insight">
+        <span class="lbl">Mission ／ 案③</span>
+        <p>怖くて仕方がなかった、あの時の小さな夢之丞のようなワンコを<span class="o">もう作らない</span>ために——殺処分がゼロになるまで、殺処分寸前のワンコを保護し続ける。</p>
+      </div>
+      <p class="measure">案③が良いのは、まず直感的に分かりやすいこと。そして「殺処分ゼロのモデルを全国へ広げる」に近い。9,300の命という現状の達成も伝わるし、引き出しの場面に共感する人は多い。さらに——<strong>夢之丞がいつか旅立っても、このミッションならずっと続けられる</strong>。「夢之丞の家族になってください」だと夢之丞亡きあとに移行が必要になるけれど、③なら継続できるし、医療支援の「夢之丞基金」もつくりやすい。</p>
+    </section>
+
+    <section class="block">
+      <p class="kicker">物語の骨子</p>
+      <h2 class="h">コンセプトムービー／LPで、伝えること。</h2>
+      <p class="measure lead">先日の森田さん・ジョンのMTGと、上のミッションを入れ込んだ骨子。4つの流れで。</p>
+      <div class="pipe">
+        <div class="pstep"><span class="dot"></span><div class="pbox"><div class="role">01 ／ 夢の始まり</div><div class="name">どこにでもいる、名もない1頭だった</div><div class="desc">山で育った名もない犬。処分機がいっぱいだからと、たまたま1頭だけ生き残った命。人が怖くて、抱きかかえるとおしっこをもらしてしまうほど震えていた。</div></div></div>
+        <div class="pstep"><span class="dot"></span><div class="pbox"><div class="role">02 ／ 夢を託した人の思い</div><div class="name">「無理だ」と言われても、諦めなかった</div><div class="desc">「人に懐かない」「災害救助犬は無理だ」。それでも、殺処分の不条理への憤りと、他の命を助けられない苦しみを背負いながら、人の社会で"いらない"存在だった夢之丞が人を助けることを夢見た人たちがいた。<br><span class="note">※救助犬になるまで／なってからの物語は journal で別途作成予定（かっこいいので）。</span></div></div></div>
+        <div class="pstep"><span class="dot"></span><div class="pbox"><div class="role">03 ／ 檻の中で震えていた犬たちのシンボルへ</div><div class="name">夢之丞が、9,000の命を救った</div><div class="desc">災害救助犬となった夢之丞は、自らを通して殺処分の問題を私たちに伝えた。夢之丞との出会いが、同じ境遇で震えていた名もない9,000もの命を救った。</div></div></div>
+        <div class="pstep"><span class="dot"></span><div class="pbox"><div class="role">04 ／ ミッション</div><div class="name">同じ命を救い、たくさんの名前をつける</div><div class="desc">夢之丞は、今怖くて震えて「生きたい」と願う犬と何も変わらない。どんな犬も、私たちと一緒に生き、特別な存在になれる。あの時の小さな夢之丞と同じ命を救い、たくさんの名前をつける——それがワンドリームプロジェクト。</div></div></div>
+      </div>
+      <div class="memo"><span class="tag">▸ 要確認</span><p>救った命の数が、資料間で揺れています（この骨子は「9,000」、ミッションの議論は「9,300」、過去の映像台本は「8,000」）。MTGで最新の正式値に統一したい。</p></div>
+    </section>
+
+    <section class="block">
+      <p class="kicker">コンセプトムービーの世界観</p>
+      <h2 class="h">説明で押さない。感じさせる。</h2>
+      <p class="measure lead">犬の映画を国内外で見比べると、「海外は"見せる"、日本は"感じさせる"」という違いがあります。夢之丞は、殺される予定だった犬が人を救ったという、世界的にも前例のないポジション。だから情報を並べるより、温度で伝えるほうが、世界に出しても強い。LP内に置く3〜5分のコンセプトムービーは、その"感じさせる"一本にします。</p>
+      <p class="measure">この映像の中核には、二つの言葉があります。最後に「バトン」として、観る人へ手渡すための言葉です。</p>
+      <div class="insight">
+        <span class="lbl">中核の二語</span>
+        <p>「不条理の少ない社会で、ありたい。」<br>「この世界には、<span class="o">諦めない集団</span>が必要だ。」</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <p class="kicker">演出の原則</p>
+      <h2 class="h">いかに「感じてもらう」か。</h2>
+      <p class="measure lead">説明的にならないために、撮り方・編集で守りたい5つ。</p>
+      <ul class="clean">
+        <li><strong>説明しない</strong>。ナレーションで状況を語らない。</li>
+        <li><strong>わからなさを撮る</strong>。老犬の目に映るボヤけた世界、黒い瞳の奥。割り切らない。</li>
+        <li><strong>美談にしない</strong>。泣かせにいかない。現実ごと、沈黙で見せる。</li>
+        <li><strong>質感で時間を語る</strong>。粗い2010の映像と、鮮明な現在。画質と老いだけで15年を伝える。</li>
+        <li><strong>観客が夢之丞に自分を重ねる</strong>。最後の「支援して」は言わない。観た人の中に自然に生ませる。</li>
+      </ul>
+      <p class="note">寄付の導線は、映像の中ではなく外（概要欄・LP）に置く。映像はあくまで"感じてもらう"ことに徹する。</p>
+    </section>
+
+    <section class="block">
+      <p class="kicker">いま考えている演出</p>
+      <h2 class="h">夕日のベンチから、15年を遡る。</h2>
+      <p class="measure lead">現在のベンチを起点に過去へ回想し、またベンチへ戻る構造。確定しているのはオープニングです。</p>
+
+      <h3 class="sh">オープニング ― 夕日のベンチ（確定稿）</h3>
+      <div class="script">
+        夕日に向かって歩く、男と足を引きずる一匹の老犬のロングショット。すすきが揺れ、ピンクのわた雲。ベンチに腰をかけ、男が犬に話しかける。<br>
+        <span class="q">「15年も経ったな。どうだったお前の人生」</span><br>
+        <span class="pov">犬のPOV</span>老いた目に、男はボヤけて輪郭だけ。<br>
+        <span class="pov">男のPOV</span>わからなさの残る真っ黒な目が、こちらを覗く。<br>
+        <span class="q">「なあ夢之丞、まさか殺しかけた犬に助けられるとは思わなかったよ」</span><br>
+        <span class="note">男＝大西代表（本人か役者かは要協議）。ここから15年前へ遡る。</span>
+      </div>
+
+      <h3 class="sh">回想 ― 15年を遡る</h3>
+      <div class="pipe">
+        <div class="pstep"><span class="dot"></span><div class="pbox"><div class="role">回想① ／ 2010 ／ 檻の前</div><div class="name">「無理だと思います」</div><div class="desc">殺処分機の前で震える子犬を、大西が抱き上げる、あの日。2010年の粗いアーカイブをそのまま使う。</div></div></div>
+        <div class="pstep"><span class="dot"></span><div class="pbox"><div class="role">回想② ／ 2010–14 ／ 諦めない日々</div><div class="name">1歩進んで、2歩下がる</div><div class="desc">雑種、ビビリ、報われる保証のない時間。組織も「地面すれすれ」。それでも誰も諦めなかった。</div></div></div>
+        <div class="pstep"><span class="dot"></span><div class="pbox"><div class="role">回想③ ／ 2014.8.20 ／ 広島</div><div class="name">誰よりも先に、見つける</div><div class="desc">期待されなかった犬が、行方不明者を発見。「ほえない、でも動かない」。感動に流さず、沈黙で見せる。</div></div></div>
+        <div class="pstep"><span class="dot"></span><div class="pbox"><div class="role">回想④ ／ 受け継ぎ</div><div class="name">一頭から、たくさんの命へ</div><div class="desc">夢之丞から続いた命の連鎖。殺処分ゼロが、広島から全国へ向かっていく。</div></div></div>
+      </div>
+
+      <h3 class="sh">今の夢之丞 ― そのままKVに</h3>
+      <p class="measure">撮り下ろしの"今"——白くなった毛、皺、静かな目。美化しない。この一枚が、冒頭の「2010・粗い・震える子犬」と対になる<strong>Before / After</strong>になり、そのままキービジュアル（案B）になります。コピーは要らない。</p>
+
+      <h3 class="sh">エンディング ― バトンを渡す</h3>
+      <div class="script">
+        ベンチに戻る。大西が夢之丞の頭に手を置く。<br>
+        <span class="q">「不条理の少ない社会で、ありたいんだ。そのためには、諦めない集団がいる。」</span><br>
+        立ち上がり、バトンを手渡す——その先は、隣の安倍さんか、まっすぐカメラ（観客）か。<br>
+        <span class="q">「ここからは、お前たちの番だ。」</span><br>
+        最後は夢之丞の目。テロップ一行 ―「あなたの『無理』は、本当に無理ですか。」<br>
+        <span class="note">― 暗転。タイトル『夢之丞』。誕生日 8.10 ―（8/10の納品は、この誕生日に重ねている）</span>
+      </div>
+      <div class="memo"><span class="tag">▸ 要協議</span><p>バトンの渡し先は2案：①安倍さんに渡す（次世代への継承が明確）／②カメラ＝観客に渡す（観た人がそのまま"諦めない集団"の一員になる）。ここで作品の着地が変わるので、MTGで決めたい。</p></div>
+    </section>
+
+    <section class="block">
+      <p class="kicker">これまでの蓄積</p>
+      <h2 class="h">映像で使える、夢之丞の事実と素材。</h2>
+      <h3 class="sh">物語の事実</h3>
+      <ul class="clean">
+        <li>2011年、広島県動物愛護センターで殺処分寸前に保護された子犬。</li>
+        <li>「人に懐かない／仕事には向かない」と言われながら、約3年の訓練。</li>
+        <li>2014年8月、広島土砂災害で災害救助犬としてデビュー（行方不明者を発見）。</li>
+        <li>以降、ネパール大地震・西日本豪雨・北海道胆振東部地震など、計17回の出動。</li>
+        <li>2022年に災害救助犬を引退。今はワンドリームプロジェクトの象徴。</li>
+        <li>この出会いを起点に、9,000以上の命がつながった。</li>
+      </ul>
+      <h3 class="sh">唯一無二の素材</h3>
+      <p class="measure">2010〜2011年、大西代表が殺処分機の前から夢之丞を救い出した<strong>粗いビデオ映像</strong>がある。これは他に存在しない素材で、オープニングと"今"のBefore/Afterの片側を担います。回想パートはほぼ既存素材で組め、新規撮影は「現在・ベンチ」が中心。</p>
+      <div class="srcstrip">
+        <span class="srctag"><b>SRC01</b> 大西代表 IV（162分）</span>
+        <span class="srctag"><b>SRC02</b> 國田部長 IV（55分）</span>
+        <span class="srctag"><b>SRC03</b> 絵本『生きろ！災害救助犬夢之丞』</span>
+        <span class="srctag"><b>SRC04</b> 2010 フルぼけアーカイブ</span>
+        <span class="srctag"><b>SRC05</b> 安倍さん IV（53分）</span>
+        <span class="srctag"><b>NEW</b> 現在・ベンチ（小西 撮影／1日）</span>
+      </div>
+      <h3 class="sh">タグライン候補</h3>
+      <div class="copy"><div class="ctx">事実の強さ</div><div class="line">殺処分機の前から、災害救助犬へ。</div></div>
+      <div class="copy"><div class="ctx">スケールを一行で</div><div class="line">一頭の犬。9,000の命。</div></div>
+    </section>
+
+    <section class="block">
+      <p class="kicker">トーンの大前提</p>
+      <h2 class="h">「お金集め」ではなく「意志を継ぐ」。</h2>
+      <p class="measure">レガシーは、泣かせにいくより、夢之丞という存在の"格"を見せる。文脈は徹底して「夢之丞の意志を継ぐ」に置く。逝去のタイミングを"待ち構えていた"ように見せないコミュニケーション設計が生命線で、ミッション③（ずっと続く）はこの点でも相性がいい——夢之丞個人に依存しすぎず、プロジェクトとして継続する形だからです。</p>
+      <div class="insight">
+        <span class="lbl">設計</span>
+        <p>夢之丞レガシーで<span class="o">爆発</span>をつくり、その熱を「夢之丞基金」や継続寄付・ふるさと納税へ。一発の山で終わらせず、<span class="o">続くプロジェクト</span>に着地させる。</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <p class="kicker">6/19 MTGに向けて（論点メモ）</p>
+      <h2 class="h">ジョン視点で、持っていきたい意見。</h2>
+      <ul class="clean">
+        <li><strong>ミッション③に賛成</strong>。「ずっと続く」「基金をつくりやすい」は、映像の作り方とも噛む。映像のラストは③のミッション文で締めるのが綺麗。</li>
+        <li><strong>名前の見せ方</strong>：「夢之丞ファミリー（ワンドリームプロジェクト）」と冒頭で一度だけ結びつけ、以降はどちらかに統一。映像とLPで呼称を揃えたい。</li>
+        <li><strong>骨子02を journal に逃がす件</strong>：ここは「いらない命が、人を助ける存在になった」という最大のかっこいい山。コンセプトムービーから完全に抜くと、03の「9,000の命」への飛躍が弱くなるかも。<strong>ダイジェストだけでも本編に残す</strong>提案を持っていきたい。</li>
+        <li><strong>KV案B × ミッション③の整合</strong>：救出映像（過去）× 今の夢之丞（現在）に、③の「もう作らない」を重ねると、過去・現在・未来が一本で繋がる。</li>
+        <li><strong>スケジュール</strong>：LPも映像も早着手が必要。クリティカルパスは「今の夢之丞」の撮り下ろし。8/10納品から逆算して、撮影日を最優先で押さえたい（→ 06 スケジュール）。</li>
+      </ul>
+      <div class="memo"><span class="tag">▸ MTG 6/19（金）15:30–17:00</span><p>森田さん起点の認識合わせ。決めたいのは「ミッション③の確定」「名前の見せ方」「骨子02（救助犬になるまで）の扱い」「バトンの渡し先（安倍さん／カメラ）」「数字の正式値（9,000か）」「映像・LPの着手と締切」。上の論点を、齟齬と意見としてまとめて臨む。</p></div>
+    </section>
+  </div>
+</main>
+
+<!-- ============ PAGE 6 — スケジュール ============ -->
+<main class="page" id="page6">
+  <div class="wrap">
+    <div class="pagehead">
+      <div class="ph-eyebrow">06 ／ スケジュール</div>
       <h1 class="ph-title">直近の納品と、<span class="o">8/10の山</span>まで。</h1>
       <p class="ph-lede">まず6月下旬から8月の確定納品を並べて、その先の夢之丞レガシー（8/10）から年末のふるさと納税までを一枚でつなぎます。</p>
     </div>
@@ -692,7 +852,7 @@
 <footer class="foot">
   <div class="wrap">
     <div>ピースワンコ コンテンツ戦略 <b>2026 下半期</b></div>
-    <div>v2.1 ／ 最終更新 2026.06.18</div>
+    <div>v2.3 ／ 最終更新 2026.06.19</div>
   </div>
 </footer>
 

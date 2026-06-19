@@ -246,6 +246,40 @@
   .legend span{display:flex;align-items:center;gap:7px;}
   .legend i{width:12px;height:12px;border-radius:4px;display:inline-block;}
 
+  /* ===== 制作カレンダー ===== */
+  .cal-wrap{margin:22px 0;}
+  .cal-month{font-family:var(--mincho);font-weight:600;font-size:17px;margin-bottom:12px;color:var(--ink);}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
+  .cal-dow{text-align:center;font-family:var(--mono);font-size:10px;color:var(--ink-3);padding:4px 0;letter-spacing:.04em;}
+  .cal-dow.sun{color:#C0392B;} .cal-dow.sat{color:#2980B9;}
+  .cal-day{border-radius:7px;padding:6px 5px 7px;min-height:62px;background:var(--surface);border:1px solid var(--line);font-size:11.5px;position:relative;}
+  .cal-day.empty{background:transparent;border-color:transparent;}
+  .cal-day.abroad{background:#F2F0EB;border-color:var(--line);}
+  .cal-day .dn{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--ink-3);display:block;margin-bottom:3px;}
+  .cal-day.sun .dn{color:#C0392B;} .cal-day.sat .dn{color:#2980B9;}
+  .cal-day .ev{font-size:10px;line-height:1.45;border-radius:4px;padding:2px 5px;margin-top:2px;display:block;font-weight:600;}
+  .cal-day .ev.yume{background:var(--accent);color:#fff;}
+  .cal-day .ev.shelter{background:var(--g-series);color:#fff;}
+  .cal-day .ev.edit{background:var(--g-furu);color:#fff;}
+  .cal-day .ev.mtg{background:var(--g-web);color:#fff;}
+  .cal-day .ev.note{background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line);}
+  .cal-day.abroad .dn{color:var(--ink-3);}
+  .abroad-label{font-size:9.5px;color:var(--ink-3);text-align:center;margin-top:2px;}
+  .cal-legend{display:flex;flex-wrap:wrap;gap:12px;margin:12px 0 0;font-size:11.5px;color:var(--ink-2);}
+  .cal-legend span{display:flex;align-items:center;gap:6px;}
+  .cal-legend i{width:10px;height:10px;border-radius:3px;display:inline-block;}
+  .prod-flow{margin:22px 0;}
+  .pf-row{display:grid;grid-template-columns:90px 1fr;gap:14px;padding:11px 0;border-top:1px solid var(--line);align-items:start;}
+  .pf-row:last-child{border-bottom:1px solid var(--line);}
+  .pf-date{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--accent-deep);line-height:1.5;}
+  .pf-body{font-size:13.5px;color:var(--ink-2);line-height:1.68;}
+  .pf-body strong{color:var(--ink);}
+  .pf-body .tag{font-family:var(--mono);font-size:10px;border-radius:20px;padding:2px 8px;color:#fff;margin-right:6px;vertical-align:middle;}
+  .pf-body .tag.yume{background:var(--accent);}
+  .pf-body .tag.shelter{background:var(--g-series);}
+  .pf-body .tag.edit{background:var(--g-furu);}
+  .pf-body .tag.mtg{background:var(--g-web);}
+
   .foot{border-top:1px solid var(--line);padding:30px 0;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-3);margin-top:14px;}
   .foot .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;}
   .foot b{color:var(--ink-2);font-weight:600;}
@@ -778,6 +812,111 @@
         <li><strong>スケジュール</strong>：LPも映像も早着手が必要。クリティカルパスは「今の夢之丞」の撮り下ろし。8/10納品から逆算して、撮影日を最優先で押さえたい（→ 06 スケジュール）。</li>
       </ul>
       <div class="memo"><span class="tag">▸ MTG 6/19（金）15:30–17:00</span><p>森田さん起点の認識合わせ。決めたいのは「ミッション③の確定」「名前の見せ方」「骨子02（救助犬になるまで）の扱い」「バトンの渡し先（安倍さん／カメラ）」「数字の正式値（9,000か）」「映像・LPの着手と締切」。上の論点を、齟齬と意見としてまとめて臨む。</p></div>
+    </section>
+
+    <section class="block">
+      <p class="kicker">制作スケジュール</p>
+      <h2 class="h">6/19 コンセプト確定 → 8/10 納品。</h2>
+      <p class="measure">小西君の海外ロケ（7/8–7/16）と愛護センター引き出し日（7/7 or 7/21）を軸に、夢之丞の撮影を最優先で押さえる。夢之丞の状態を考えると早いほど良いので、7/7の愛護センター撮影（午前）に合わせて、その前週＝7/5前後に夢之丞を撮る流れが現実的。</p>
+
+      <!-- 7月カレンダー -->
+      <div class="cal-wrap">
+        <div class="cal-month">7月 2026</div>
+        <div class="cal-grid">
+          <div class="cal-dow sun">日</div><div class="cal-dow">月</div><div class="cal-dow">火</div><div class="cal-dow">水</div><div class="cal-dow">木</div><div class="cal-dow">金</div><div class="cal-dow sat">土</div>
+          <!-- 7/1は火曜 → 空2つ -->
+          <div class="cal-day empty"></div>
+          <div class="cal-day empty"></div>
+          <div class="cal-day"><span class="dn">1</span></div>
+          <div class="cal-day"><span class="dn">2</span></div>
+          <div class="cal-day"><span class="dn">3</span></div>
+          <div class="cal-day"><span class="dn">4</span></div>
+          <div class="cal-day sat"><span class="dn">5</span><span class="ev yume">夢之丞 撮影候補</span></div>
+          <div class="cal-day sun"><span class="dn">6</span><span class="ev yume">夢之丞 撮影候補</span></div>
+          <div class="cal-day"><span class="dn">7</span><span class="ev shelter">愛護センター 引き出し撮影（午前）</span><span class="ev note">小西君 午後〜出発調整</span></div>
+          <div class="cal-day abroad"><span class="dn">8</span><span class="abroad-label">小西君<br>海外ロケ</span></div>
+          <div class="cal-day abroad"><span class="dn">9</span><span class="abroad-label">〃</span></div>
+          <div class="cal-day abroad"><span class="dn">10</span><span class="abroad-label">〃</span></div>
+          <div class="cal-day abroad"><span class="dn">11</span><span class="abroad-label">〃</span></div>
+          <div class="cal-day abroad"><span class="dn">12</span><span class="abroad-label">〃</span></div>
+          <div class="cal-day abroad sat"><span class="dn">13</span><span class="abroad-label">〃</span></div>
+          <div class="cal-day abroad sun"><span class="dn">14</span><span class="abroad-label">〃</span></div>
+          <div class="cal-day abroad"><span class="dn">15</span><span class="abroad-label">〃</span></div>
+          <div class="cal-day abroad"><span class="dn">16</span><span class="abroad-label">小西君 帰国</span></div>
+          <div class="cal-day"><span class="dn">17</span><span class="ev edit">編集スタート</span></div>
+          <div class="cal-day"><span class="dn">18</span></div>
+          <div class="cal-day sat"><span class="dn">19</span></div>
+          <div class="cal-day sun"><span class="dn">20</span><span class="ev yume">夢之丞 撮影 第2候補</span></div>
+          <div class="cal-day"><span class="dn">21</span><span class="ev shelter">愛護センター 引き出し（本命日）</span></div>
+          <div class="cal-day"><span class="dn">22</span><span class="ev yume">夢之丞 撮影 第2候補</span></div>
+          <div class="cal-day"><span class="dn">23</span></div>
+          <div class="cal-day"><span class="dn">24</span></div>
+          <div class="cal-day"><span class="dn">25</span></div>
+          <div class="cal-day sat"><span class="dn">26</span></div>
+          <div class="cal-day sun"><span class="dn">27</span></div>
+          <div class="cal-day"><span class="dn">28</span><span class="ev edit">粗編 完成目標</span></div>
+          <div class="cal-day"><span class="dn">29</span></div>
+          <div class="cal-day"><span class="dn">30</span></div>
+          <div class="cal-day sat"><span class="dn">31</span></div>
+          <div class="cal-day empty"></div>
+        </div>
+        <div class="cal-legend">
+          <span><i style="background:var(--accent)"></i>夢之丞 撮影</span>
+          <span><i style="background:var(--g-series)"></i>愛護センター</span>
+          <span><i style="background:var(--g-furu)"></i>編集</span>
+          <span><i style="background:var(--c-mute)"></i>小西君 海外ロケ（7/8–7/16）</span>
+        </div>
+      </div>
+
+      <!-- 制作フロー -->
+      <div class="prod-flow">
+        <div class="pf-row">
+          <div class="pf-date">6/19<br>今日</div>
+          <div class="pf-body"><span class="tag mtg">MTG</span><strong>コンセプト・ミッション確定</strong>。名前の見せ方、骨子02の扱い、バトンの渡し先、数字の正式値を固める。</div>
+        </div>
+        <div class="pf-row">
+          <div class="pf-date">6月下旬</div>
+          <div class="pf-body"><span class="tag mtg">構成</span><strong>映像構成・絵コンテ詰め</strong>。オープニング〜エンディングの詳細演出、ナレーション有無、音楽トーンを確定。</div>
+        </div>
+        <div class="pf-row">
+          <div class="pf-date">7/5–7/6<br>（第1候補）</div>
+          <div class="pf-body"><span class="tag yume">夢之丞撮影</span><strong>現在の夢之丞・ベンチシーン撮影</strong>（小西君）。夢之丞の状態を優先し、できるだけ早いタイミングで押さえる。7/7の愛護センター撮影前日〜当日午前中でのセットも検討。</div>
+        </div>
+        <div class="pf-row">
+          <div class="pf-date">7/7</div>
+          <div class="pf-body"><span class="tag shelter">センター</span><strong>愛護センター 引き出し撮影</strong>（午前）。撮影終了後、小西君は翌日の海外ロケ出発に向けて移動。スケジュール要調整。</div>
+        </div>
+        <div class="pf-row">
+          <div class="pf-date">7/8–7/16</div>
+          <div class="pf-body"><span class="tag note" style="background:var(--c-mute);color:var(--ink-2);">不在</span>小西君 海外ロケ。この期間はアーカイブ素材整理・ナレーション録音・音楽選定など、撮影不要の作業を進める。</div>
+        </div>
+        <div class="pf-row">
+          <div class="pf-date">7/17〜</div>
+          <div class="pf-body"><span class="tag edit">編集</span>小西君 帰国。<strong>本格編集スタート</strong>。アーカイブ（SRC01–05）＋撮り下ろし素材を組み合わせ、粗編へ。</div>
+        </div>
+        <div class="pf-row">
+          <div class="pf-date">7/20–7/22<br>（第2候補）</div>
+          <div class="pf-body"><span class="tag yume">夢之丞撮影</span>7/5–6で撮影できなかった場合の<strong>夢之丞 撮影予備日</strong>。7/21の愛護センター引き出し日と近いので、あわせて調整。</div>
+        </div>
+        <div class="pf-row">
+          <div class="pf-date">7/21</div>
+          <div class="pf-body"><span class="tag shelter">センター</span><strong>愛護センター 引き出し本命日</strong>。7/7で撮影できなかった場合のバックアップ撮影も兼ねる。</div>
+        </div>
+        <div class="pf-row">
+          <div class="pf-date">7/28</div>
+          <div class="pf-body"><span class="tag edit">編集</span><strong>粗編 完成目標</strong>。内部確認・修正フィードバック。</div>
+        </div>
+        <div class="pf-row">
+          <div class="pf-date">8/1–8/9</div>
+          <div class="pf-body"><span class="tag edit">編集</span><strong>仕上げ編集・音楽・カラー・テロップ</strong>。修正対応バッファ期間。</div>
+        </div>
+        <div class="pf-row">
+          <div class="pf-date">8/10<br>🎯 納品</div>
+          <div class="pf-body"><strong>夢之丞レガシー 納品</strong>。夢之丞の誕生日に合わせた公開。</div>
+        </div>
+      </div>
+
+      <div class="memo"><span class="tag">▸ クリティカルパス</span><p>「夢之丞の撮影日」が全体の鍵。7/8から小西君が不在になるため、<strong>7/5–7/7のどこかで夢之丞撮影を確定させる</strong>のが最優先。7/7の愛護センター撮影は午前完結を目標に設定し、小西君の海外出発に間に合わせる。コンセプト確定（今日）から撮影日確保まで2週間以内に動く。</p></div>
     </section>
   </div>
 </main>

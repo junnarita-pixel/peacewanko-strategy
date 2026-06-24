@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>夢之丞 コンセプトムービー ― 言葉とシーンのリスト</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --bg: #0d0c0a;
+  --bg2: #15120d;
+  --panel: #1a1610;
+  --edge: #2e2719;
+  --bone: #f2ebdc;
+  --ash: #cfc6b5;
+  --dim: #968c79;
+  --faint: #5f5749;
+  --amber: #e09a45;
+  --amber-bright: #f3ba6c;
+  --rust: #c85a24;
+  --gold: #e8c49d;
+  --teal: #7aa595;
+  --teal-dim: #4a6359;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ash);
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 14px;
+  line-height: 1.85;
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(224,154,69,.05), transparent 55%);
+}
+
+.wrap { max-width: 940px; margin: 0 auto; padding: 0 2rem 7rem; }
+
+/* HEADER */
+.head { padding: 4.5rem 0 2.5rem; border-bottom: 1px solid var(--edge); }
+.head-kicker { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--faint); margin-bottom: 1.5rem; }
+.head h1 { font-family: 'Shippori Mincho', serif; font-size: 40px; font-weight: 800; color: var(--bone); line-height: 1.3; margin-bottom: 1.25rem; }
+.head p { font-size: 14px; color: var(--dim); max-width: 720px; line-height: 1.95; }
+
+/* CONCEPT BAND */
+.concept { background: var(--panel); border: 1px solid var(--edge); border-left: 4px solid var(--amber); padding: 1.75rem 2rem; margin: 2.5rem 0; }
+.concept-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; }
+.concept .core { font-family: 'Shippori Mincho', serif; font-size: 22px; font-weight: 700; color: var(--bone); line-height: 1.7; margin-bottom: 1rem; }
+.concept .core em { font-style: normal; color: var(--amber-bright); }
+.concept p { font-size: 13px; color: var(--dim); line-height: 1.9; }
+.concept p b { color: var(--ash); }
+
+/* TONE NOTE */
+.tone { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0 3rem; }
+.tone-card { background: var(--bg2); border: 1px solid var(--edge); padding: 1rem 1.25rem; }
+.tone-card h4 { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; color: var(--teal); margin-bottom: .5rem; text-transform: uppercase; }
+.tone-card p { font-size: 12.5px; color: var(--dim); line-height: 1.7; }
+
+/* SECTION */
+.sec-head { margin: 3.5rem 0 1.5rem; display: flex; align-items: baseline; gap: 1rem; }
+.sec-num { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--amber); }
+.sec-head h2 { font-family: 'Shippori Mincho', serif; font-size: 24px; font-weight: 700; color: var(--bone); }
+.sec-head .en { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--faint); letter-spacing: .1em; margin-left: auto; }
+
+/* SCENE ROW: word + image paired */
+.scene { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 1rem 0; border: 1px solid var(--edge); background: var(--panel); overflow: hidden; }
+.scene-word { padding: 1.5rem 1.75rem; border-right: 1px solid var(--edge); display: flex; flex-direction: column; justify-content: center; }
+.scene-word-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--amber); margin-bottom: .85rem; }
+.scene-word .line { font-family: 'Shippori Mincho', serif; font-size: 18px; font-weight: 600; color: var(--bone); line-height: 1.85; }
+.scene-word .line em { font-style: normal; color: var(--amber-bright); font-weight: 700; }
+.scene-word .sub { font-size: 12px; color: var(--faint); margin-top: .75rem; line-height: 1.6; }
+
+.scene-shot { padding: 1.5rem 1.75rem; background: var(--bg2); }
+.scene-shot-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--teal); margin-bottom: .85rem; }
+.scene-shot .vis { font-size: 13.5px; color: var(--ash); line-height: 1.85; margin-bottom: .85rem; }
+.scene-shot .vis em { font-style: normal; color: var(--gold); font-weight: 600; }
+.scene-meta { display: flex; flex-wrap: wrap; gap: .4rem; }
+.scene-meta .tag { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; padding: 2px 8px; border-radius: 2px; letter-spacing: .03em; }
+.tag-where { background: rgba(122,165,149,.12); color: var(--teal); border: 1px solid rgba(122,165,149,.3); }
+.tag-who { background: rgba(224,154,69,.1); color: var(--amber); border: 1px solid rgba(224,154,69,.28); }
+.tag-konishi { background: rgba(200,90,36,.13); color: #e08a5a; border: 1px solid rgba(200,90,36,.35); }
+.tag-archive { background: rgba(150,140,120,.12); color: var(--dim); border: 1px solid rgba(150,140,120,.3); }
+
+/* opening / closing special */
+.scene.accent { border-color: var(--amber); }
+.scene.accent .scene-word { background: linear-gradient(135deg, rgba(224,154,69,.08), transparent); }
+
+/* divider note */
+.flow-note { font-size: 12px; color: var(--faint); font-family: 'JetBrains Mono', monospace; text-align: center; margin: 1.5rem 0; letter-spacing: .05em; }
+
+/* shot checklist */
+.checklist { background: var(--panel); border: 1px solid var(--edge); padding: 1.75rem 2rem; margin: 2rem 0; }
+.checklist h3 { font-family: 'Shippori Mincho', serif; font-size: 19px; color: var(--bone); margin-bottom: 1.25rem; }
+.check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem 2rem; }
+.check-item { font-size: 13px; color: var(--ash); line-height: 1.6; padding-left: 1.5rem; position: relative; margin-bottom: .5rem; }
+.check-item::before { content: '☐'; position: absolute; left: 0; color: var(--amber); font-size: 14px; }
+.check-item b { color: var(--bone); }
+.check-cat { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin: 1rem 0 .6rem; grid-column: 1 / -1; }
+.check-cat:first-child { margin-top: 0; }
+
+.foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 2px solid var(--edge); font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--faint); line-height: 1.9; }
+
+@media (max-width: 740px) {
+  .scene { grid-template-columns: 1fr; }
+  .scene-word { border-right: none; border-bottom: 1px solid var(--edge); }
+  .tone, .check-grid { grid-template-columns: 1fr; }
+  .head h1 { font-size: 30px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="head">
+  <div class="head-kicker">ピースワンコ・ジャパン ／ コンテンツチーム　撮影台本</div>
+  <h1>野犬は、人と出会った時に、<br>野犬ではなくなる。</h1>
+  <p>「思想と構造」のページで定めた3つの問いと答えを、撮るべき絵と、のせる言葉に落としたもの。左に言葉、右に絵。小西くんとの撮影で、そのまま使えるように。質感の指針は、ジャーナル「野犬を家族に。行き先のない命をつなぐ」の文体。</p>
+</div>
+
+<div class="concept">
+  <div class="concept-tag">この映像が描くもの</div>
+  <div class="core">主役は、夢之丞ではない。<br><em>「野犬」という存在そのもの</em>だ。</div>
+  <p>頭数（9,000頭）に目が行きがちだけれど、その数字の一つひとつに、こんな目をした命がいた。夢之丞は、最初から最後まで撮れている<b>唯一の象徴</b>。別々の犬たちの各段階（保護→検疫→馴化→里親）を、一頭の旅のようにモンタージュで繋ぐ。<b>言葉で殴らない。野犬の表情と、詩的な一行で刺す。</b></p>
+</div>
+
+<div class="tone">
+  <div class="tone-card"><h4>Tone 01</h4><p>事実を淡々と。最後にそっと希望を置く。泣かせにいかないのに、刺さる。</p></div>
+  <div class="tone-card"><h4>Tone 02</h4><p>汚い言葉で殴らない（サポーターは倫理的でセンシティブ）。表情と沈黙で語る。</p></div>
+  <div class="tone-card"><h4>Tone 03</h4><p>絵で見せ、言葉は最小限のせる。映像詩。一行が、本質を突く。</p></div>
+</div>
+
+<!-- ════ 1. 野犬という存在 ════ -->
+<div class="sec-head"><span class="sec-num">01</span><h2>野犬という、存在</h2><span class="en">The Existence</span></div>
+<div class="flow-note">― 言葉を出す前に、まず「存在」を見せる ―</div>
+
+<div class="scene accent">
+  <div class="scene-word">
+    <div class="scene-word-label">言葉 ／ 冒頭</div>
+    <div class="line">「野犬」というだけで、<br>殺されてしまう命がある。</div>
+    <div class="sub">※ ジャーナル原文「野犬、というだけで殺処分されている現実があります」より</div>
+  </div>
+  <div class="scene-shot">
+    <div class="scene-shot-label">絵 ／ 小西くんの核</div>
+    <div class="vis">言葉を出さなくても全てを放っている、<em>野犬の表情</em>のクローズアップ。警戒、怯え、それでも穏やかな瞳。隅で身を固くする姿。檻ごしの目。</div>
+    <div class="scene-meta">
+      <span class="tag tag-where">神石高原シェルター</span>
+      <span class="tag tag-where">徳島引き出し現場</span>
+      <span class="tag tag-konishi">小西：表情・存在のカット</span>
+    </div>
+  </div>
+</div>
+
+<div class="scene">
+  <div class="scene-word">
+    <div class="scene-word-label">言葉</div>
+    <div class="line">人が怖くて、身を固くする。<br>触れられることを、知らない。</div>
+  </div>
+  <div class="scene-shot">
+    <div class="scene-shot-label">絵</div>
+    <div class="vis">震える背中。隅にかたまる2頭。くくり罠で傷ついた前足。痛みをこらえて自らケージに入る姿。<em>過酷な現実を、説明せず映す</em>。</div>
+    <div class="scene-meta">
+      <span class="tag tag-where">徳島引き出し（7月中旬・約15頭）</span>
+      <span class="tag tag-archive">森田アーカイブ</span>
+      <span class="tag tag-konishi">小西：間合い・距離感</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 2. 出会い ════ -->
+<div class="sec-head"><span class="sec-num">02</span><h2>出会い</h2><span class="en">The Encounter</span></div>
+<div class="flow-note">― この映像の、核の一行 ―</div>
+
+<div class="scene accent">
+  <div class="scene-word">
+    <div class="scene-word-label">言葉 ／ 核</div>
+    <div class="line">野犬は、人と出会った時に、<br><em>野犬ではなくなる。</em></div>
+    <div class="sub">この一行が映像の背骨。ここで「存在」が「関係」に変わる。</div>
+  </div>
+  <div class="scene-shot">
+    <div class="scene-shot-label">絵</div>
+    <div class="vis">人の手が、おそるおそる差し出される。犬がにおいをかぐ。最初の接触。スタッフが目線を低くして待つ。<em>慣れていく時間</em>を、静かに。</div>
+    <div class="scene-meta">
+      <span class="tag tag-where">神石高原シェルター</span>
+      <span class="tag tag-who">スタッフ（安倍さん等）</span>
+      <span class="tag tag-konishi">小西：手と犬・最初の信頼</span>
+    </div>
+  </div>
+</div>
+
+<div class="scene">
+  <div class="scene-word">
+    <div class="scene-word-label">言葉</div>
+    <div class="line">怖がりな子ほど、<br>心が通うと、<br>深い信頼を寄せてくれる。</div>
+    <div class="sub">※ ジャーナル原文「心が通うと深い信頼を寄せてくれ」より</div>
+  </div>
+  <div class="scene-shot">
+    <div class="scene-shot-label">絵</div>
+    <div class="vis">検疫舎。診察、ワクチン、ケア。獣医師の手。傷の手当て。<em>愛された象徴</em>としての、丁寧に世話される一頭。徐々にほどけていく表情。</div>
+    <div class="scene-meta">
+      <span class="tag tag-where">オレンジ犬舎（老犬・病気の子）</span>
+      <span class="tag tag-where">検疫舎</span>
+      <span class="tag tag-konishi">小西：治療・ケアの手</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 3. 夢之丞という象徴 ════ -->
+<div class="sec-head"><span class="sec-num">03</span><h2>夢之丞という、象徴</h2><span class="en">The Symbol</span></div>
+<div class="flow-note">― 名もなき野犬の物語が、ここで一頭に重なる ―</div>
+
+<div class="scene accent">
+  <div class="scene-word">
+    <div class="scene-word-label">言葉</div>
+    <div class="line">かつて、殺処分機の前で<br>震えていた、一頭の野犬がいた。</div>
+    <div class="sub">夢之丞。最初から最後まで撮れている、唯一の象徴。</div>
+  </div>
+  <div class="scene-shot">
+    <div class="scene-shot-label">絵</div>
+    <div class="vis"><em>2010年の粗いアーカイブ</em>：震える子犬。そして現在の、穏やかに年老いた夢之丞へ。同じ命の、15年。画質の差で時間を語る。</div>
+    <div class="scene-meta">
+      <span class="tag tag-archive">2010フルぼけ映像</span>
+      <span class="tag tag-who">現在の夢之丞</span>
+      <span class="tag tag-konishi">小西：今の夢之丞・夕暮れ</span>
+    </div>
+  </div>
+</div>
+
+<div class="scene">
+  <div class="scene-word">
+    <div class="scene-word-label">言葉</div>
+    <div class="line">無理だと言われたその犬は、<br>やがて、人の命を救った。<br>そして——<em>9,000の命</em>の、<br>始まりになった。</div>
+  </div>
+  <div class="scene-shot">
+    <div class="scene-shot-label">絵</div>
+    <div class="vis">救助犬として瓦礫に立つ夢之丞（アーカイブ）。そして、彼に続く名もなき犬たちの群れへ。<em>一頭から、たくさんへ</em>。</div>
+    <div class="scene-meta">
+      <span class="tag tag-archive">広島土砂災害・ネパール</span>
+      <span class="tag tag-where">シェルターの保護犬たち</span>
+    </div>
+  </div>
+</div>
+
+<div class="scene">
+  <div class="scene-word">
+    <div class="scene-word-label">言葉 ／ 大西さん（撮影は必ず）</div>
+    <div class="line">「でも、私達は——<br><em>命を、あきらめたくなかった。</em>」</div>
+    <div class="sub">※ 本編採用は編集判断。だが現場感のある手持ちで撮影は必ず行う（議事録）。</div>
+  </div>
+  <div class="scene-shot">
+    <div class="scene-shot-label">絵</div>
+    <div class="vis">大西代表。夢之丞と触れ合う、語る。<em>手持ちカメラの現場感</em>。語る言葉より、語る前後の沈黙と表情。7/1〜6の撮影期間内に必ず確保。</div>
+    <div class="scene-meta">
+      <span class="tag tag-who">大西代表</span>
+      <span class="tag tag-konishi">小西：手持ち・表情・沈黙</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 4. 帰る場所 ════ -->
+<div class="sec-head"><span class="sec-num">04</span><h2>帰る場所</h2><span class="en">The Home</span></div>
+<div class="flow-note">― 検疫 → 人に慣れる → 里親さんの元へ。希望の着地 ―</div>
+
+<div class="scene">
+  <div class="scene-word">
+    <div class="scene-word-label">言葉</div>
+    <div class="line">家族になったら、<br>全身で、愛情に応えてくれる。</div>
+    <div class="sub">※ ジャーナル原文「家族になったら全身で愛情に応えてくれます」より</div>
+  </div>
+  <div class="scene-shot">
+    <div class="scene-shot-label">絵 ／ ピースワンコの美しいシーン</div>
+    <div class="vis">里親さんと犬の対面。尻尾を振る。抱きしめられる。車に乗って、新しい家へ向かう。<em>笑顔で暮らせる日</em>。譲渡の瞬間の光。</div>
+    <div class="scene-meta">
+      <span class="tag tag-where">譲渡センター</span>
+      <span class="tag tag-who">里親さん・家族</span>
+      <span class="tag tag-konishi">小西：対面・別れと旅立ち</span>
+    </div>
+  </div>
+</div>
+
+<div class="scene accent">
+  <div class="scene-word">
+    <div class="scene-word-label">言葉 ／ 着地</div>
+    <div class="line">どんな犬も、<br>笑顔で暮らせる日が、<br><em>必ず来る。</em></div>
+    <div class="sub">※ ジャーナル原文「どの子もみんな、優しい家族のもとで笑顔で暮らせる日が必ず来ます」より</div>
+  </div>
+  <div class="scene-shot">
+    <div class="scene-shot-label">絵</div>
+    <div class="vis">家族のもとで穏やかに眠る、元・野犬。冒頭の「怯えた目」と対になる、満ち足りた目。最後にもう一度、夢之丞の今へ。</div>
+    <div class="scene-meta">
+      <span class="tag tag-who">里親家庭の犬</span>
+      <span class="tag tag-who">現在の夢之丞</span>
+    </div>
+  </div>
+</div>
+
+<div class="scene accent">
+  <div class="scene-word">
+    <div class="scene-word-label">言葉 ／ 結び</div>
+    <div class="line">そんな命を、一匹でも失くさないために。<br>怖くて震えていた、<em>あの時の夢之丞のような命</em>を、<br>もう作らないために。</div>
+    <div class="sub">ミッション③「もう作らないために——殺処分がゼロになるまで、保護し続ける」への接続。「支援して」とは言わない。</div>
+  </div>
+  <div class="scene-shot">
+    <div class="scene-shot-label">絵</div>
+    <div class="vis">夕暮れ。シェルターの犬たち、夢之丞。静かに暮れていく光。テロップ：『夢之丞』／ ワンドリームプロジェクト。</div>
+    <div class="scene-meta">
+      <span class="tag tag-where">神石高原・夕暮れ</span>
+      <span class="tag tag-konishi">小西：マジックアワー</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 撮影チェックリスト ════ -->
+<div class="sec-head"><span class="sec-num">★</span><h2>撮影チェックリスト</h2><span class="en">Shot Checklist</span></div>
+<div class="checklist">
+  <h3>小西くん撮影分（7/1〜6）＋ 成田撮影分（7/14 徳島）</h3>
+  <div class="check-grid">
+    <div class="check-cat">野犬の「存在」（最重要・小西）</div>
+    <div class="check-item"><b>野犬の表情</b>クローズアップ（警戒・怯え・穏やかな瞳）</div>
+    <div class="check-item"><b>檻ごしの目</b>／隅で身を固くする姿</div>
+    <div class="check-item">震える背中・かたまる複数頭</div>
+    <div class="check-item">傷ついた前足／ケージに自ら入る姿</div>
+
+    <div class="check-cat">出会い・ケア</div>
+    <div class="check-item">差し出される<b>人の手</b>と、においをかぐ犬</div>
+    <div class="check-item">最初の接触・目線を低くするスタッフ</div>
+    <div class="check-item"><b>検疫・治療</b>のシーン（獣医師の手・傷の手当て）</div>
+    <div class="check-item">ほどけていく表情の変化</div>
+
+    <div class="check-cat">夢之丞・大西さん</div>
+    <div class="check-item">現在の<b>夢之丞</b>（夕暮れ・穏やかな今）</div>
+    <div class="check-item"><b>大西代表</b>×夢之丞 触れ合い・語り（手持ち・必ず）</div>
+    <div class="check-item">大西さんの語る前後の<b>沈黙と表情</b></div>
+
+    <div class="check-cat">帰る場所（美しいシーン）</div>
+    <div class="check-item">里親さんとの<b>対面</b>・尻尾を振る瞬間</div>
+    <div class="check-item">車で新しい家へ向かう・旅立ち</div>
+    <div class="check-item">家族のもとで穏やかに眠る元・野犬</div>
+    <div class="check-item"><b>マジックアワー</b>のシェルター全景</div>
+
+    <div class="check-cat">成田撮影（7/14 徳島引き出し）</div>
+    <div class="check-item">保護される瞬間の野犬・引き出し現場の空気</div>
+    <div class="check-item">約15頭の保護・移送のドキュメント</div>
+  </div>
+</div>
+
+<div class="foot">
+  PEACE WINDS JAPAN ／ コンテンツチーム ― 夢之丞コンセプトムービー 言葉とシーンのリスト<br>
+  ※ 言葉の質感は ジャーナル「野犬を家族に。行き先のない命をつなぐ」に準拠。引用箇所はその旨を明記。<br>
+  ※ 撮影＝小西遊馬（7/1〜6）／ 成田（7/14 徳島）。大西さん撮影は本編採用未定だが必ず実施。森田アーカイブをメイン素材に活用。<br>
+  原則：① 言葉で殴らない ② 表情と沈黙で語る ③ 事実を淡々と、最後にそっと希望 ④「支援して」と言わない。
+</div>
+
+</div>
+</body>
+</html>

@@ -280,6 +280,30 @@
   .pf-body .tag.edit{background:var(--g-furu);}
   .pf-body .tag.mtg{background:var(--g-web);}
 
+  /* ===== 05タブ ドロップダウン ＆ サブページ ===== */
+  .tab-dd{display:flex;align-items:stretch;}
+  .dd-caret{font-size:9px;color:var(--ink-3);margin-left:2px;}
+  .tab-dd:hover .dd-caret{color:var(--accent);}
+  .tab-menu{position:fixed;display:none;min-width:260px;background:var(--surface);
+    border:1px solid var(--line);border-top:2.5px solid var(--accent);border-radius:0 0 10px 10px;
+    box-shadow:0 12px 28px rgba(33,32,28,.16);z-index:200;overflow:hidden;}
+  .tab-menu .subnav{display:flex;flex-direction:column;gap:2px;width:100%;text-align:left;
+    background:transparent;border:none;border-bottom:1px solid var(--line);cursor:pointer;
+    padding:11px 16px;font-family:var(--gothic);transition:background .15s;}
+  .tab-menu .subnav:last-child{border-bottom:none;}
+  .tab-menu .subnav:hover{background:var(--accent-tint);}
+  .tab-menu .subnav b{font-size:13.5px;font-weight:700;color:var(--ink);}
+  .tab-menu .subnav small{font-size:11px;color:var(--ink-3);font-weight:400;}
+  .yume-sub{padding:clamp(20px,3vw,32px) 0 60px;}
+  .yume-subbar{display:flex;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap;}
+  .yume-subbar .subback{background:var(--surface);border:1px solid var(--line-strong);border-radius:20px;
+    padding:7px 16px;font-family:var(--gothic);font-size:12.5px;font-weight:600;color:var(--ink-2);
+    cursor:pointer;transition:all .15s;}
+  .yume-subbar .subback:hover{background:var(--accent-tint);border-color:var(--accent);color:var(--accent-deep);}
+  .yume-subbar .subttl{font-family:var(--mincho);font-weight:600;font-size:18px;color:var(--ink);}
+  .yume-subbar .subttl .o{color:var(--accent);}
+  .yume-frame{width:100%;height:calc(100vh - 150px);min-height:560px;border:1px solid var(--line);
+    border-radius:12px;background:#0c0b09;display:block;box-shadow:0 4px 20px rgba(33,32,28,.08);}
   .foot{border-top:1px solid var(--line);padding:30px 0;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-3);margin-top:14px;}
   .foot .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;}
   .foot b{color:var(--ink-2);font-weight:600;}
@@ -320,7 +344,14 @@
     <button class="tab" data-target="page2"><span class="n">02</span>YouTube／ショート</button>
     <button class="tab" data-target="page3"><span class="n">03</span>ふるさと納税</button>
     <button class="tab" data-target="page4"><span class="n">04</span>「その後」シリーズ</button>
-    <button class="tab" data-target="page5"><span class="n">05</span>夢之丞</button>
+    <div class="tab-dd">
+      <button class="tab" data-target="page5"><span class="n">05</span>夢之丞 <span class="dd-caret">▾</span></button>
+      <div class="tab-menu">
+        <button class="subnav" data-sub="philosophy"><b>思想と構造</b><small>この映像が、なぜ必要か</small></button>
+        <button class="subnav" data-sub="scenelist"><b>言葉とシーンのリスト</b><small>撮るべき絵と、のせる言葉</small></button>
+        <button class="subnav" data-sub="storyboard"><b>絵コンテ 2案</b><small>ワンドリーム型／夕日型</small></button>
+      </div>
+    </div>
     <button class="tab" data-target="page6"><span class="n">06</span>スケジュール</button>
   </nav>
 </header>
@@ -950,6 +981,37 @@
       <div class="memo"><span class="tag">▸ クリティカルパス</span><p>「<strong>大西さん × 夢之丞の撮影</strong>」が全体の鍵。小西くんが7/8から海外で不在になるため、<strong>7/1–7/6の撮影期間内に、大西さんに来てもらう日を必ず確定させる</strong>のが最優先。ベンチシーンと「実際の声」はこの1日にかかっている。7/14の徳島引き出しは小西不在のため成田単独撮影で対応する。</p></div>
     </section>
   </div>
+
+  <!-- ===== 05 サブページ（ドロップダウンから表示） ===== -->
+  <div class="yume-sub" id="sub-philosophy" style="display:none;">
+    <div class="wrap">
+      <div class="yume-subbar">
+        <button class="subback">← 夢之丞トップへ</button>
+        <span class="subttl">思想と構造 <span class="o">／ この映像が、なぜ必要か</span></span>
+      </div>
+      <iframe class="yume-frame" src="yumenosuke-philosophy.html" title="夢之丞 思想と構造" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <div class="yume-sub" id="sub-scenelist" style="display:none;">
+    <div class="wrap">
+      <div class="yume-subbar">
+        <button class="subback">← 夢之丞トップへ</button>
+        <span class="subttl">言葉とシーンのリスト <span class="o">／ 撮るべき絵と、のせる言葉</span></span>
+      </div>
+      <iframe class="yume-frame" src="yumenosuke-scenelist.html" title="夢之丞 言葉とシーンのリスト" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <div class="yume-sub" id="sub-storyboard" style="display:none;">
+    <div class="wrap">
+      <div class="yume-subbar">
+        <button class="subback">← 夢之丞トップへ</button>
+        <span class="subttl">絵コンテ 2案 <span class="o">／ ワンドリーム型・夕日型</span></span>
+      </div>
+      <iframe class="yume-frame" src="yumenosuke-storyboard.html" title="夢之丞 絵コンテ 2案" loading="lazy"></iframe>
+    </div>
+  </div>
 </main>
 
 <!-- ============ PAGE 6 — スケジュール ============ -->
@@ -1039,6 +1101,58 @@
     tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.target);});});
     var h=(location.hash||'').replace('#','');
     if(h&&document.getElementById(h)){show(h);}
+  })();
+
+  /* 05 夢之丞 サブページ（ドロップダウン） */
+  (function(){
+    var page5=document.getElementById('page5');
+    if(!page5)return;
+    var main5=page5.querySelector(':scope > .wrap');
+    var subs=[].slice.call(page5.querySelectorAll('.yume-sub'));
+    var tabs=[].slice.call(document.querySelectorAll('.tab'));
+    var pages=[].slice.call(document.querySelectorAll('.page'));
+
+    function showMain(){
+      if(main5)main5.style.display='';
+      subs.forEach(function(s){s.style.display='none';});
+    }
+    function showSub(id){
+      pages.forEach(function(p){p.classList.toggle('active',p.id==='page5');});
+      tabs.forEach(function(t){t.classList.toggle('active',t.dataset.target==='page5');});
+      if(main5)main5.style.display='none';
+      subs.forEach(function(s){s.style.display=(s.id===id)?'block':'none';});
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+
+    /* ドロップダウン開閉（fixed配置でタブの overflow に影響されない） */
+    var dd=document.querySelector('.tab-dd');
+    var menu=dd?dd.querySelector('.tab-menu'):null;
+    if(dd&&menu){
+      var btn=dd.querySelector('.tab');
+      var hideTimer;
+      function place(){var r=btn.getBoundingClientRect();menu.style.left=r.left+'px';menu.style.top=r.bottom+'px';}
+      function open(){clearTimeout(hideTimer);place();menu.style.display='block';}
+      function close(){menu.style.display='none';}
+      dd.addEventListener('mouseenter',open);
+      dd.addEventListener('mouseleave',function(){hideTimer=setTimeout(close,180);});
+      menu.addEventListener('mouseenter',open);
+      menu.addEventListener('mouseleave',function(){hideTimer=setTimeout(close,180);});
+      window.addEventListener('scroll',function(){if(menu.style.display==='block')place();});
+      window.addEventListener('resize',function(){if(menu.style.display==='block')place();});
+    }
+
+    document.querySelectorAll('.subnav').forEach(function(b){
+      b.addEventListener('click',function(e){
+        e.stopPropagation();
+        showSub('sub-'+b.getAttribute('data-sub'));
+        if(menu)menu.style.display='none';
+      });
+    });
+    document.querySelectorAll('.subback').forEach(function(b){
+      b.addEventListener('click',function(){showMain();window.scrollTo({top:0,behavior:'smooth'});});
+    });
+    /* どのタブをクリックしてもサブページはリセット */
+    tabs.forEach(function(t){t.addEventListener('click',showMain);});
   })();
 </script>
 
